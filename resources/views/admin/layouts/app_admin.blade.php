@@ -18,6 +18,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div id="app">
@@ -36,7 +39,7 @@
                         <li class="dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
                           <div class="dropdown-menu" role="menu">
-                            <a href="#" class="dropdown-item">Категории</a>
+                            <a href="{{route('admin.category.index')}}" class="dropdown-item">Категории</a>
                             <a href="#" class="dropdown-item">Материалы</a>
                           </div>
                         </li>
