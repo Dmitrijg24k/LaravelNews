@@ -27,9 +27,10 @@
                 @forelse ($categories as $category)
                     <tr>
                         <td>{{$category->title}}</td>
-                        <td>{{$category->publised}}</td>
+                        <td>{{$category->published}}</td>
                         <td>
-                            <a href="{{route('admin.category.edit', ['id'=>$category->id])}}">
+                            <a href="#"> 
+                                {{-- {{route('admin.category.edit', ['id'=>$category->id])}} --}}
                                 <i class="fa fa-edit"></i>
                             </a>
                         </td>

@@ -37,7 +37,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Блог</a>
                           <div class="dropdown-menu" role="menu">
                             <a href="{{route('admin.category.index')}}" class="dropdown-item">Категории</a>
                             <a href="#" class="dropdown-item">Материалы</a>

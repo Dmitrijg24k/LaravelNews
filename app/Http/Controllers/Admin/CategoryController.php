@@ -28,7 +28,12 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        //Открытие форм и создние категорий
+        return view('admin.categories.create', [
+            'category' => [], // Массив категорий
+            'categories' => Category::with('children')->where('parent_id', '0')->get(),  //Коллекция с вложенными категориями
+            'delimiter' => '' //Символ для отображения вложенности
+        ]);
     }
 
     /**
@@ -39,7 +44,10 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Добавление в базу данных
+        Category::create($request->all());
+        
+        return redirect()->route('admin.category.index');
     }
 
     /**
