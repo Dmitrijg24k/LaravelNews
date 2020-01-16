@@ -69,7 +69,12 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        //Открытые формы редактирования категорий
+        return view('admin.categories.edit', [
+            'category' => $category, // Коллекия категорий
+            'categories' => Category::with('children')->where('parent_id', '0')->get(),  //Коллекция с вложенными категориями
+            'delimiter' => '' //Символ для отображения вложенности
+        ]);
     }
 
     /**
@@ -82,6 +87,9 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         //
+        $category->update($request->except('slug')); //Обновляем категорию, но оставляем тот же slug
+
+        return redirect()->route('admin.category.index');
     }
 
     /**
@@ -92,6 +100,10 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        //Удаление записей из базы
+
+        $category->delete();
+
+        return redirect()->route('admin.category.index');
     }
 }
