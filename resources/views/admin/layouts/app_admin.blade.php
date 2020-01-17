@@ -36,6 +36,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        <li>
+                            <a class="nav-link" href="{{route('admin.index')}}" role="button" aria-expanded="false">Панель состояний</a>
+                        </li>
                         <li class="dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Блог</a>
                           <div class="dropdown-menu" role="menu">
