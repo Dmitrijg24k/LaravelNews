@@ -19,7 +19,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     Route::get('/', 'DashboardController@dashboard')->name('admin.index');
     Route::resource('/category', 'CategoryController', ['as'=>'admin']);
     Route::resource('/article', 'ArticleController', ['as'=>'admin']);
- });
+    Route::group(['prefix' =>'user_managment', 'namespace' => 'UserManagment'], function (){
+        Route::resource('/user', 'UserController', ['as' => 'admin.user_managment']);
+    });
+});
 
 Route::get('/', function () {
     return view('blog.home');
@@ -27,4 +30,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function(){
+    return view('blog.home');
+})->name('home');
